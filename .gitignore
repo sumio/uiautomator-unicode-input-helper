@@ -61,4 +61,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-
+# Emacs backup
+*~
+\#*#
