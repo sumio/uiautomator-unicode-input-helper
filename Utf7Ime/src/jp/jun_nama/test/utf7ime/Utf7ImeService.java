@@ -97,14 +97,14 @@ public class Utf7ImeService extends InputMethodService {
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Log.d(TAG, String.format("onKeyDown(): keyCode = %x", keyCode));
+        // Log.d(TAG, String.format("onKeyDown(): keyCode = %x", keyCode));
         int c = getUnicodeChar(keyCode, event);
 
         if (c == 0) {
             return super.onKeyDown(keyCode, event);
         }
 
-        Log.d(TAG, String.format("onKeyDown(): char = %c [%x]", c, c));
+        // Log.d(TAG, String.format("onKeyDown(): char = %c [%x]", c, c));
 
         if (!mIsShifted) {
             if (c == MODIFIED_UTF7_SHIFT) {
@@ -130,7 +130,7 @@ public class Utf7ImeService extends InputMethodService {
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        Log.d(TAG, String.format("onKeyUp (%x)", keyCode));
+        // Log.d(TAG, String.format("onKeyUp (%x)", keyCode));
         mMetaState = MetaKeyKeyListener.handleKeyUp(mMetaState, keyCode, event);
         return super.onKeyUp(keyCode, event);
     }
