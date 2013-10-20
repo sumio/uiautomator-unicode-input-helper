@@ -70,7 +70,7 @@ uiautomatorのプロジェクトでは、``libs/``ディレクトリ配下にJAR
 
 ``UiAutomatorInputSample/``ディレクトリ配下の実装例も参考にしてください。
 
-なお、``&amp;``以外のASCII文字を入力するのであれば、``Utf7ImeHelper.e()``でラップせずに、
+なお、``&``以外のASCII文字を入力するのであれば、``Utf7ImeHelper.e()``でラップせずに、
 ``setText()``の引数に直接入力しても問題ありません。
 
 ### サンプルについて
