@@ -119,12 +119,10 @@ This sample code simulates the following instructions:
 * Connect your testing device.
 * Change directories to the root of the sample project.
 * Build and run by typing the following commands (ant is required):
-
-```
-ant clean build install
-adb shell uiautomator runtest UiAutomatorInputSample.jar \
-    -c jp.jun_nama.test.utf7ime.sample.UiAutomatorInputTest
-```
+ 
+        ant clean build install
+        adb shell uiautomator runtest UiAutomatorInputSample.jar \
+            -c jp.jun_nama.test.utf7ime.sample.UiAutomatorInputTest
 
 The sample code is tested under Nexus7 (2013) and Android
 emulators based on Android 4.3.
