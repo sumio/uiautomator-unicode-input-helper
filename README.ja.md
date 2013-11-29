@@ -79,6 +79,7 @@ uiautomatorで日本語を入力するサンプルプロジェクトが同梱さ
 このサンプルでは、Googleの検索ボックスに  
 「こんにちは！UiAutomatorで入力しています。」  
 と自動的に入力します。
+  ![Result Screenshot](/images/sample-screenshot.png)
 
 サンプルプロジェクトをビルド・実行するには、``ANDROID_HOME``環境変数を適切に設定した上で、
 以下のコマンドを実行してください(antが必要です)。
@@ -88,6 +89,12 @@ uiautomatorで日本語を入力するサンプルプロジェクトが同梱さ
     ant clean build install
     adb shell uiautomator runtest UiAutomatorInputSample.jar \
               -c jp.jun_nama.test.utf7ime.sample.UiAutomatorInputTest
+
+このサンプルは、Android 4.4のNexus 7 (2013)上で動作を確認しています。
+他のバージョンでは、Googleの検索ボックスのクラス名が異なるため、サンプルそのままでは動作しません。
+その場合でも、検索条件部分を書き換えることで動作させることができると思います。
+
+なお、このAndroidバージョンによる制限は、あくまでもサンプルアプリの制限です。Utf7Imeとヘルパーライブラリ自身は、uiautomatorが動作する端末であれば問題なく動作します。
 
 License
 ------

@@ -1,6 +1,6 @@
 Uiautomator Unicode Input Helper
 ======================
-(Japanese Version is [hear](README.ja.md).)
+(Japanese Version is [here](README.ja.md).)
 
 _Uiautomator Unicode Input Helper_ enables you to input any Unicode 
 (including non-ASCII) characters by using Android 
@@ -124,11 +124,10 @@ This sample code simulates the following instructions:
         adb shell uiautomator runtest UiAutomatorInputSample.jar \
             -c jp.jun_nama.test.utf7ime.sample.UiAutomatorInputTest
 
-The sample code is tested under Nexus7 (2013) and Android
-emulators based on Android 4.3.
+The sample code is tested under Nexus7 (2013) based on Android 4.4.
 
-It is not run properly for Android emulators based on API level
-17 or earlier because the class name of Google search box is
+It is not run properly for Android emulators based on Android 4.3
+or earlier because the class name of Google search box is
 different. Rewrite search criteria in the sample code so that it
 can be run under such a device or emulator.
 

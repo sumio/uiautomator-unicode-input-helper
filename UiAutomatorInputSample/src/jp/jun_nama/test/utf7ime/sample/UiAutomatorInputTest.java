@@ -42,7 +42,7 @@ public class UiAutomatorInputTest extends UiAutomatorTestCase {
 
         // Get the google search text box
         UiObject searchBox = new UiObject(
-                new UiSelector().className("com.google.android.searchcommon.ui.SimpleSearchText"));
+                new UiSelector().className("com.google.android.search.shared.ui.SimpleSearchText"));
 
         // do Japanese Input!
         searchBox.setText(Utf7ImeHelper.e("こんにちは！UiAutomatorで入力しています。"));
