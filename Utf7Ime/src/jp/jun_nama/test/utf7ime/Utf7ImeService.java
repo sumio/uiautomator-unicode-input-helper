@@ -19,12 +19,9 @@ import java.nio.charset.Charset;
 
 import android.inputmethodservice.InputMethodService;
 import android.text.method.MetaKeyKeyListener;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
-
-import com.beetstra.jutf7.CharsetProvider;
 
 /**
  * <p>
@@ -47,7 +44,7 @@ public class Utf7ImeService extends InputMethodService {
     private static final String TAG = "Utf7ImeService";
 
     /** Expected encoding for hardware key input. */
-    private static final String CHARSET_MODIFIED_UTF7 = "X-MODIFIED-UTF-7";
+    private static final String CHARSET_MODIFIED_UTF7 = "x-IMAP-mailbox-name";
 
     /** Special character to shift to Modified BASE64 in modified UTF-7. */
     private static final char MODIFIED_UTF7_SHIFT = '&';
@@ -69,7 +66,7 @@ public class Utf7ImeService extends InputMethodService {
         if (!restarting) {
             mMetaState = 0;
             mIsShifted = false;
-            mModifiedUtf7Charset = new CharsetProvider().charsetForName(CHARSET_MODIFIED_UTF7);
+            mModifiedUtf7Charset = Charset.forName(CHARSET_MODIFIED_UTF7);
         }
         mComposing = null;
 
@@ -136,14 +133,14 @@ public class Utf7ImeService extends InputMethodService {
     }
 
     private void toShifted() {
-        Log.d(TAG, "SHIFTED!!");
+        // Log.d(TAG, "SHIFTED!!");
         mIsShifted = true;
         mComposing = new StringBuilder();
         appendComposing(MODIFIED_UTF7_SHIFT);
     }
 
     private void toUnshifted() {
-        Log.d(TAG, "toUnshifted()");
+        // Log.d(TAG, "toUnshifted()");
         mIsShifted = false;
         mComposing.append(MODIFIED_UTF7_UNSHIFT);
         String decoded = decodeUtf7(mComposing.toString());

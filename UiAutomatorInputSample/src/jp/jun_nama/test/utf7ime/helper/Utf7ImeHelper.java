@@ -41,8 +41,6 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 
-import com.beetstra.jutf7.CharsetProvider;
-
 /**
  * Utf7ImeHelper provides a simple Modified UTF-7 encoder. <br/>
  * If you use it in uiautomator, you can write simply as follows:
@@ -61,7 +59,7 @@ import com.beetstra.jutf7.CharsetProvider;
  */
 public class Utf7ImeHelper {
 
-    private static final Charset CHARSET_MODIFIED_UTF7 = new CharsetProvider().charsetForName("X-MODIFIED-UTF-7");
+    private static final Charset CHARSET_MODIFIED_UTF7 = Charset.forName("x-IMAP-mailbox-name");
 
     /**
      * Encodes the specified text into modified UTF-7.
