@@ -140,3 +140,7 @@ License
 Copyright 2013 TOYAMA Sumio <<jun.nama@gmail.com>>  
 Licensed under the
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+This software contains
+[jutf7-1.0.0](http://sourceforge.net/projects/jutf7/) written by J.T. Beetstra,
+which is available under a MIT license.

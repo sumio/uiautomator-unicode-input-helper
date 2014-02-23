@@ -23,6 +23,8 @@ import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 
+import com.beetstra.jutf7.CharsetProvider;
+
 /**
  * <p>
  * Utf7ImeService enables users to input any Unicode character by using only the
@@ -44,7 +46,7 @@ public class Utf7ImeService extends InputMethodService {
     private static final String TAG = "Utf7ImeService";
 
     /** Expected encoding for hardware key input. */
-    private static final String CHARSET_MODIFIED_UTF7 = "x-IMAP-mailbox-name";
+    private static final String CHARSET_MODIFIED_UTF7 = "X-MODIFIED-UTF-7";
 
     /** Special character to shift to Modified BASE64 in modified UTF-7. */
     private static final char MODIFIED_UTF7_SHIFT = '&';
@@ -66,7 +68,7 @@ public class Utf7ImeService extends InputMethodService {
         if (!restarting) {
             mMetaState = 0;
             mIsShifted = false;
-            mModifiedUtf7Charset = Charset.forName(CHARSET_MODIFIED_UTF7);
+            mModifiedUtf7Charset = new CharsetProvider().charsetForName(CHARSET_MODIFIED_UTF7);
         }
         mComposing = null;
 
