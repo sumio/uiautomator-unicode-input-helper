@@ -87,7 +87,7 @@ public class Utf7ImeHelper {
     //@formatter:off
     /*
      * The original code is available from
-     *     https://android.googlesource.com/platform/libcore/+/master/libdvm/src/main/java/java/lang/String.java
+     *     https://android.googlesource.com/platform/libcore/+/android-4.4_r1.2/libdvm/src/main/java/java/lang/String.java
      */
     //@formatter:on
     public static byte[] getBytes(String input, Charset charset) {
@@ -108,7 +108,7 @@ public class Utf7ImeHelper {
     //@formatter:off
     /*
      * The original code is available from
-     *     https://android.googlesource.com/platform/libcore/+/master/luni/src/main/java/java/nio/charset/CharsetEncoder.java
+     *     https://android.googlesource.com/platform/libcore/+/android-4.4_r1.2/luni/src/main/java/java/nio/charset/CharsetEncoder.java
      */
     //@formatter:on
     private static ByteBuffer encode(CharBuffer in, CharsetEncoder encoder) {
